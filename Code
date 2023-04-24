@@ -1,0 +1,31 @@
+def calculate_average(grades):
+    return sum(grades) / len(grades)
+
+def assign_letter_grade(average):
+    if average >= 90:
+        return "A"
+    elif average >= 80:
+        return "B"
+    elif average >= 70:
+        return "C"
+    elif average >= 60:
+        return "D"
+    else:
+        return "F"
+
+grades = []
+
+while True:
+    grade = input("Enter a grade (or 'X' to quit): ")
+    if grade == 'X':
+        break
+    else:
+        grades.append(float(grade))
+
+if len(grades) == 0:
+    print("No grades entered.")
+else:
+    average = calculate_average(grades)
+    grade = assign_letter_grade(average)
+    print("Your average in the class is :", average)
+    print("Your letter grade is :", grade)
